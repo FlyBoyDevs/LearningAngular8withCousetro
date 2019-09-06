@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  clickCounter: number = 0;
+  clickCounter = 0;
+  name: string;
 
   constructor() { }
 
@@ -15,5 +16,12 @@ export class HomeComponent implements OnInit {
 
   countClick() {
     this.clickCounter += 1;
+  }
+
+  setClass() {
+    return {
+      active: this.clickCounter > 4,
+      notActive: this.clickCounter <= 4
+    };
   }
 }
